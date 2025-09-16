@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #!/usr/bin/env python3
 import sys
 import math
@@ -31,3 +32,21 @@ except (IndexError, ValueError):
     print("<p>Please provide valid numbers for a, b, and c.</p>")
     print("</body>")
     print("</html>")
+=======
+#!/usr/bin/env python3
+
+import cgi
+
+print("Content-Type: text/html\n")
+
+form = cgi.FieldStorage()
+a = float(form.getvalue("a", 0))
+b = float(form.getvalue("b", 0))
+c = float(form.getvalue("c", 0))
+
+result = ((c**3)**0.5 / a) * 10 + b
+
+print(f"<html><body>")
+print(f"<h2>Resultado: {result}</h2>")
+print(f"</body></html>")
+>>>>>>> 6250e71a3c57a3885432c31235e96b36404b2a2f
