@@ -6,15 +6,16 @@
 </head>
 <body>
     <h1>Calculator</h1>
-    <form method="get">
-        <label for="a">Enter a:</label>
-        <input type="number" step="any" name="a" required><br><br>
-        <label for="b">Enter b:</label>
-        <input type="number" step="any" name="b" required><br><br>
-        <label for="c">Enter c:</label>
-        <input type="number" step="any" name="c" required><br><br>
-        <input type="submit" value="Calculate">
-    </form>
+<form method="get" action="calculate.py">
+    <label>Enter a: </label>
+    <input type="text" name="a"><br>
+    <label>Enter b: </label>
+    <input type="text" name="b"><br>
+    <label>Enter c: </label>
+    <input type="text" name="c"><br>
+    <input type="submit" value="Calculate">
+</form>
+
 
     <?php
     if(isset($_GET['a']) && isset($_GET['b']) && isset($_GET['c'])) {
