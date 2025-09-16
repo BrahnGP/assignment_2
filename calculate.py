@@ -1,27 +1,16 @@
+#!/usr/bin/env python3
+
 import cgi
-import cgitb
-import math
-
-cgitb.enable()
-
-form = cgi.FieldStorage()
-a = form.getvalue("a", "1")
-b = form.getvalue("b", "0")
-c = form.getvalue("c", "1")
-
-try:
-    a = float(a)
-    b = float(b)
-    c = float(c)
-except ValueError:
-    print("Content-Type: text/html\n")
-    print("<h1>Error: Valores no numéricos</h1>")
-    exit()
-
-c_cubed = c ** 3
-sqrt_c_cubed = c_cubed ** 0.5
-division = sqrt_c_cubed / a
-result = division * 10 + b
 
 print("Content-Type: text/html\n")
-print(f"<h1>Resultado: {result}</h1>")
+
+form = cgi.FieldStorage()
+a = float(form.getvalue("a", 0))
+b = float(form.getvalue("b", 0))
+c = float(form.getvalue("c", 0))
+
+result = ((c**3)**0.5 / a) * 10 + b
+
+print(f"<html><body>")
+print(f"<h2>Resultado: {result}</h2>")
+print(f"</body></html>")
